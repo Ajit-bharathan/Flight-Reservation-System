@@ -4,47 +4,51 @@ package com.FlightReservation;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("\n\n\t\t\t\t\t\t\t\t\t......FLIGHT RESERVATION SYSTEM.......");
-        System.out.println("\nFlight Information:::");
+        System.out.println("\n\nFLIGHT RESERVATION SYSTEM");
+        System.out.println("\nFlight Details:-");
 
-        Flight f = new Flight("IC8080","AIR INDIA");
+
+        System.out.println("=======================================================================================================");
+
+        Flight f = new Flight("AI1234\n","AIR INDIA\n");
+        System.out.println("\n---------------------------------------------------------------------------------------");
         System.out.println(f.getFlightDetails());
+        System.out.println("________________________________________________________________________________________");
 
-        System.out.println("Customer Option " +
-                "for Regular Ticket:::");
-        RegularTicket regular = new RegularTicket("MG Road", "MUMBAI", "MAHARASHTRA", "RAM", 20203014,
-                "rk@gmail.com", "IC8086", "AIR INDIA", "BANG", "DEL", "10/10/21", "0900", "1420", "80AA78",
-                "A10", 4500, "SNACKS");
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("Regular Ticket:-");
+        RegularTicket regular = new RegularTicket("sector 34-A", "MUMBAI", "MAHARASHTRA", "Arpita", 1234567890,
+                "Am@gmail.com", "AI1234", "AIR INDIA", "MUM", "HYD", "11/09/21", "2000", "2230", "6589658",
+                "C18", 2569, "Vodka and dahi vada");
+        System.out.println("      ");
         System.out.println(regular.getTicketDetails());
         System.out.println(regular.getDuration());
         System.out.println(regular.getSpecialServices());
         System.out.println(regular.checkedStatus());
-        System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("Happy Flying");
+        System.out.println("       ");
+        System.out.println("Welcome to Air India");
 
         System.out.println("\n\n\n");
 
-        System.out.println("Customer Option for Tourist Ticket:::\n");
-        TouristTicket tt = new TouristTicket("MG Road", "MUMBAI", "MAHARASHTRA", "RAM", 20203014,
-                "rk@gmail.com", "IC8087", "AIR INDIA", "MUM", "BANG", "15/10/21", "1800", "0900", "609A78",
-                "B21", 3500, "GRAND HYATT");
+        System.out.println("Tourist Ticket:-\n");
+        TouristTicket abc = new TouristTicket("sector 34-A", "MUMBAI", "MAHARASHTRA", "Arpita", 1234567890,
+                "Am@gmail.com", "AI1234", "AIR INDIA", "MUM", "HYD", "11/09/21", "2000", "2230", "6589658",
+                "C18", 2569, "IBIS");
 
-        System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println(tt.getTicketDetails());
-        System.out.println(tt.getDuration());
+        System.out.println("          ");
+        System.out.println(abc.getTicketDetails());
+        System.out.println(abc.getDuration());
         System.out.println();
-        tt.getTouristLocation();
+        abc.getTouristLocation();
         System.out.println();
-        System.out.println(tt.checkedStatus());
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("Happy Flying\n");
+        System.out.println(abc.checkedStatus());
+        System.out.println("           ");
+        System.out.println("Thankyou\n");
         System.out.println(f.getFlightDetails());
 
-        System.out.println("\n\n...Cancel Ticket...");
-        tt.cancel();
-        System.out.println("\n\n"+tt.getTicketDetails());
-        System.out.println(tt.checkedStatus());
+        System.out.println("\n\nCancel Ticket");
+        abc.cancel();
+        System.out.println("\n\n"+abc.getTicketDetails());
+        System.out.println(abc.checkedStatus());
         System.out.println("\n\n"+f.getFlightDetails());
 
     }

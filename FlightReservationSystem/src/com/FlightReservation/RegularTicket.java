@@ -4,37 +4,37 @@ package com.FlightReservation;
 public class RegularTicket extends Ticket {
     public String specialServices;
 
-    public RegularTicket(String adstreet, String adcity, String adstate, String cname, int cphone, String cemail, String fn, String an,
+    public RegularTicket(String addstreet, String addcity, String addstate, String cname, int cphone, String cemail, String fn, String an,
                          String t, String f, String d, String dep, String arr, String pnr, String st, float p, String sps) {
-        super(adstreet, adcity, adstate, cname, cphone, cemail, fn, an, t, f, d, dep, arr, pnr, st, p);
+        super(addstreet, addcity, addstate, cname, cphone, cemail, fn, an, t, f, d, dep, arr, pnr, st, p);
         this.specialServices = sps;
 
     }
 
-    public String getTDetails() {
-        return "PNR:" + this.pnr + " To:" + this.to + " From:" + this.from + " SeatNo: " + this.seatNo + " Date:" + this.date + " Depature Time: " + this.departure +
+    public String getTicDetails() {
+        return "PNR:" + this.pnr + " To:" + this.to + " From:" + this.from + " SeatNo: " + this.seatNo + "\n Date:" + this.date + " Depature Time: " + this.departure +
                 " Arrival Time:" + arrival + " Price:" + this.price;
     }
 
     public String getTicketDetails() {
-        return " " + psg.getId() + "\n" + psg.getContactDetails() + "\n" + psg.getAddressDetails() + "\n" + flight.getFlightNumber() + "\n" + flight.getAirline() +
-                "\n" + this.getTDetails() + "\n";
+        return " " + p.getId() + "\n" + p.getContactDetails() + "\n" + p.getAddressDetails() + "\n" + flight.getFlightNumber() + "\n" + flight.getAirline() +
+                "\n" + this.getTicDetails() + "\n";
     }
 
     public String getDuration() {
-        int i = Integer.parseInt(departure);
-        int j = Integer.parseInt(arrival);
-        int k;
-        float l = 0.0f;
-        if (j > i) {
-            k = j - i;
-            l = (float) k / 100.0f;
-        } else if (j < i) {
-            k = i - j;
-            l = (float) k / 100.0f;
-            l = l + 24.0f;
+        int m = Integer.parseInt(departure);
+        int n = Integer.parseInt(arrival);
+        int b;
+        float t = 0.0f;
+        if (n > m) {
+            b = n - m;
+            t = (float) b / 100.0f;
+        } else if (n < m) {
+            b = m - n;
+            t = (float) b / 100.0f;
+            t = t + 24.0f;
         }
-        return "Duration: " + l + "hrs";
+        return "Duration: " + t + " hours";
     }
 
     public String checkedStatus() {
@@ -48,8 +48,8 @@ public class RegularTicket extends Ticket {
 
     public void cancel() {
         cancelled = true;
-        Flight.bcnt = Flight.bcnt--;
-        flight.bookedSeats = Flight.bcnt;
+        Flight.bcan = Flight.bcan--;
+        flight.bookedSeats = Flight.bcan;
     }
 
     public String getSpecialServices() {
@@ -59,16 +59,16 @@ public class RegularTicket extends Ticket {
     public void updateSpecialServices(int i) {
         switch (i) {
             case 1:
-                specialServices = "Snacks";
+                specialServices = "Vodka and dahi vada";
                 break;
             case 2:
-                specialServices = "food";
+                specialServices = "Coffee";
                 break;
             case 3:
-                specialServices = "Water";
+                specialServices = "Meals";
                 break;
             default:
-                specialServices = "Happy Flying..";
+                specialServices = "Choose your service";
                 break;
         }
 

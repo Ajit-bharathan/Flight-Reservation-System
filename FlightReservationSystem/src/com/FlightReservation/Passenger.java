@@ -2,7 +2,7 @@ package com.FlightReservation;
 
 public class Passenger {
     private int id;
-    private static int idCnt;
+    private static int idContact;
 
 
     private static class Address{
@@ -36,14 +36,14 @@ public class Passenger {
 
     static
     {
-        idCnt=0;
+        idContact=0;
     }
 
-    public Passenger(String adstreet, String adcity, String adstate, String cname, int cphone, String cemail)
+    public Passenger(String addstreet, String addcity, String addstate, String cname, int cphone, String cemail)
     {
-        this.address=new Address(adstreet,adcity,adstate);
+        this.address=new Address(addstreet,addcity,addstate);
         this.contact=new Contact(cname,cphone,cemail);
-        this.id=++idCnt;
+        this.id=++idContact;
     }
     int getId()
     {

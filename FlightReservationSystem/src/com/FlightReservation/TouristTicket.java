@@ -7,16 +7,16 @@ public class TouristTicket extends Ticket {
     protected String[] touristLocation = new String[5];
     Scanner sc=new Scanner(System.in);
 
-    public TouristTicket(String adstreet, String adcity, String adstate, String cname, int cphone, String cemail, String fn, String an,
+    public TouristTicket(String addstreet, String addcity, String addstate, String cname, int cphone, String cemail, String fn, String an,
                          String t, String f, String d,String dep, String arr, String pnr,String st, float p,String hotel)
     {
-        super(adstreet,adcity,adstate,cname,cphone,cemail,fn,an,t,f,d,dep,arr,pnr,st,p);
+        super(addstreet,addcity,addstate,cname,cphone,cemail,fn,an,t,f,d,dep,arr,pnr,st,p);
         this.hotelAddress=hotel;
         setTouristLocation();
     }
 
 
-    public String getTDetails()
+    public String getTicDetails()
     {
         return "PNR:"+this.pnr+" To:"+this.to+" From:"+this.from+" SeatNo: "+this.seatNo+" Date:"+this.date+" Depature Time: "+this.departure+
                 " Arrival Time:"+arrival+" Price:"+this.price;
@@ -24,8 +24,8 @@ public class TouristTicket extends Ticket {
 
     public  String getTicketDetails()
     {
-        return " "+psg.getId()+"\n"+psg.getContactDetails()+"\n"+psg.getAddressDetails()+"\n"+flight.getFlightNumber()+"\n"+flight.getAirline()+
-                "\n"+this.getTDetails()+"\n";
+        return " "+p.getId()+"\n"+p.getContactDetails()+"\n"+p.getAddressDetails()+"\n"+flight.getFlightNumber()+"\n"+flight.getAirline()+
+                "\n"+this.getTicDetails()+"\n";
     }
 
     public  String getDuration()
@@ -69,15 +69,15 @@ public class TouristTicket extends Ticket {
     public  void cancel()
     {
         cancelled=true;
-        Flight.bcnt=--Flight.bcnt;
-        Flight.bookedSeats=Flight.bcnt;
+        Flight.bcan=--Flight.bcan;
+        Flight.bookedSeats=Flight.bcan;
         Flight.avail=Flight.cap-Flight.bookedSeats;
     }
 
 
-    public void setHotelAddress(String ha)
+    public void setHotelAddress(String hoteladd)
     {
-        this.hotelAddress=ha;
+        this.hotelAddress=hoteladd;
     }
 
     public String getHotelAddress()
@@ -88,7 +88,7 @@ public class TouristTicket extends Ticket {
     public void setTouristLocation()
     {
         System.out.println("Enter the 5 location :");
-        System.out.println("\na) Tata hospital   b) botanical garden   c) marine drive  d) ibis hotel e) ashram  f) garden  ");
+        System.out.println("\na) Tata hospital   b) lonavala   c) juhu beach  d) ibis hotel e) Tiger Hill  f) Linda's house ");
         try {
             for (int i = 0; i < 5; i++) {
                 touristLocation[i] = sc.next();

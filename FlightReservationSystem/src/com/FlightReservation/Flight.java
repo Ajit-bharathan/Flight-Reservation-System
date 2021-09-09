@@ -6,7 +6,7 @@ public class Flight {
     private String airline;
     public static int cap;
     public  static int bookedSeats;
-    public static int bcnt;
+    public static int bcan;
     public static int avail;
 
 
@@ -49,9 +49,9 @@ public class Flight {
         return cap;
     }
 
-    public static int getBcnt()
+    public static int getBcan()
     {
-        return bcnt;
+        return bcan;
     }
 
     public static int getAvail() {
@@ -66,14 +66,14 @@ public class Flight {
 
     static{
         cap=50;
-        bcnt=0;
+        bcan=0;
         avail=50;
         bookedSeats=0;
     }
 
     void incrementBookingCounter()
     {
-        bookedSeats=++bcnt;
+        bookedSeats=++bcan;
         avail=cap-bookedSeats;
 
     }
